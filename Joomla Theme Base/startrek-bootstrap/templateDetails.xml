@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template" client="site">
+	<name>startrek-bootstrap</name>
+	<creationDate>08/09/2015</creationDate>
+	<author>Frank Schroeder</author>
+	<copyright>This template is copyright protected by Frank Schroeder</copyright>
+	<license></license>
+	<authorEmail>frank@datateam.lu</authorEmail>
+	<authorUrl>http://www.datateam.lu</authorUrl>
+	<version>3.0</version>
+	<description>Star-Trek LCARS Theme 3.0</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>template_preview.png</filename>
+		<filename>error.php</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+<folder>js</folder>
+	</files>
+
+</extension>
