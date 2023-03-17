@@ -7,7 +7,7 @@ get_header();
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-9">
+        <div class="col-lg-9">
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
@@ -27,7 +27,7 @@ get_header();
                 
 
         </div><!-- .col -->
-        <div class="col-3">
+        <div class="col-lg-3">
             <?php get_sidebar(); ?>
         </div>
     </div><!-- .row -->

@@ -8,12 +8,16 @@
         <meta charset="<?php bloginfo( 'charset' ) ?>">
         <meta name="viewport" content="width=device-width, intial-scale=1">
         <?php wp_head(); ?>
+        <script type="text/javascript">
+            var c=document.cookie;
+            document.cookie='size='+Math.max(screen.width,screen.height)+';';
+        </script>
     </head>
     <body <?php body_class(); ?>>
 
 
 
-<table style="background-color:transparent; "width="1236" border="0" cellpadding="0" cellspacing="0" align="center">
+<table class="table-header" style="background-color:transparent;" max-width="1236" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr align="center">
     <td bgcolor="#000000" width="160" height="2"></td>
     <td bgcolor="#000000" width="10"></td>
@@ -23,17 +27,59 @@
   </tr>
 
 <tr align="center">
-    <td height="85" colspan="5" valign="top" background="<?php echo get_template_directory_uri();?>/images/lcars_r1_c1.png">
-        <img border="0" src="<?php echo get_template_directory_uri();?>/images/numbers2.gif" width="400" height="60">
-        <img border="0" src="<?php echo get_template_directory_uri();?>/images/numbers2.gif" width="400" height="60">
+    <td height="85" colspan="5" valign="top" background="<?php echo get_template_directory_uri(); ?>/images/lcars_r1_c1.png">
+
+
+<?php 
+
+if ( wp_is_mobile() ){
+ 
+}
+else {
+
+
+
+    echo '<img border="0" src="' . get_template_directory_uri() . '/images/numbers2.gif" width="400" height="60">';
+    echo '<img border="0" src="' . get_template_directory_uri() . '/images/numbers2.gif" width="400" height="60">';
+
+}
+?>
+
+        
     </td>
 </tr>
 
+<tr align="left" valign="middle">
+    <td height="20" colspan="5">
+        <span class="pathway">
+
+     
+        </span>
+    </td>
+  </tr>
+
+<tr>
+    <td height="45" colspan="5" valign="top" background="<?php echo get_template_directory_uri(); ?>/images/lcars_r3_c1.png">&nbsp;</td>
+</tr>
 
 
+<tr>
+    <td width="160" height="25" align="center" valign="middle">
+        <span class="small">
+            <?php 
 
+            setlocale(LC_TIME, 'de_DE.UTF8');
 
+            DEFINE('_DATE_FORMAT_LC', "%A, der %d. %B %Y"); //Verwendet das PHP strftime Format
+            DEFINE('_DATE_FORMAT_LC2', "%A, %d %B %Y %H:%M");
 
+            echo (strftime (_DATE_FORMAT_LC)); 
+            
+            ?>
+
+        </span>
+    </td>
+</tr>
 
 
 
