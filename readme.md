@@ -1,1 +1,3 @@
 Here I gonna create a LCARS Theme for Wordpress for my [Star Trek Luxembourg](https://startrek.lu) Site which is at the moment created under Joomla...
+
+Pay attention that work is still in progess and nothing is working yet!!!!!!

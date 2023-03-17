@@ -1,3 +1,15 @@
+/**
+    Theme Name: LCARS
+    Theme URI: https://startrek.lu
+    Author: Frank Schroeder
+    Author URI: https://iseet.fans
+    Description: LCARs Theme for Star Trek Luxembourg
+    Version: 1.0.0
+    Text Domain: startrek
+    License: CC BY-ND 3.0 or later
+**/
+
+
 @font-face {
     font-family: 'Orbitron-Regular';
     src: url('https://fonts.datateam.center/fonts/Orbitron-Regular.svg#Orbitron-Regular') format('svg'),
