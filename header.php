@@ -65,15 +65,16 @@ else {
 
 <tr>
     <td width="160" height="25" align="center" valign="middle">
-        <span class="small">
+        <span class="medium">
             <?php 
 
             setlocale(LC_TIME, 'de_DE.UTF8');
 
             DEFINE('_DATE_FORMAT_LC', "%A, der %d. %B %Y"); //Verwendet das PHP strftime Format
             DEFINE('_DATE_FORMAT_LC2', "%A, %d %B %Y %H:%M");
+            DEFINE('_DATE_FORMAT_LC3', "%d/%m/%Y %H:%M");
 
-            echo (strftime (_DATE_FORMAT_LC)); 
+            echo (strftime (_DATE_FORMAT_LC3)); 
             
             ?>
 
@@ -120,7 +121,7 @@ else {
                 <?php
                 if ( wp_is_mobile() ){
 
-                    echo '<nav id="navbar site-navigation" class="navbar primary-navigation">';
+                    echo '<nav id="navbar site-navigation" class="navbar primary-navigation-mobile">';
  
                 
                     if ( has_nav_menu( 'primary' ) ) :
@@ -137,7 +138,25 @@ else {
 
                     echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
                     echo '</nav><!-- .navbar -->';
-                }    
+                }  else {
+                    echo '<nav id="navbar site-navigation" class="navbar primary-navigation">';
+ 
+                
+                    if ( has_nav_menu( 'primary' ) ) :
+                        wp_nav_menu( [
+                            'theme_location' => 'primary',
+                            'container'      => false,
+                            'menu_class'     => 'menu-wrapper',
+                            'container_class' => 'primary-menu-container',
+                            'menu_id'        => '',
+                            'depth'          => 3,
+                            'fallback_cb'     => false
+                        ] );
+                    endif;
+
+                    echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
+                    echo '</nav><!-- .navbar -->';                    
+                }  
                 ?>
 
             </div>
