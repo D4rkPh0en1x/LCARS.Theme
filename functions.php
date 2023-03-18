@@ -225,3 +225,4 @@ function lcars_widgets_init()
 }
 
 add_action( 'widgets_init', 'lcars_widgets_init' );
+

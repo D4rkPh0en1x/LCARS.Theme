@@ -1,3 +1,6 @@
+<?php /* Template Name: Page + SideBar */ ?>
+
+
 <?php
 /**
  * Single page template.
@@ -7,7 +10,7 @@ get_header();
 ?>
 <div class="container wrapper">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-9">
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
@@ -27,6 +30,9 @@ get_header();
                 
 
         </div><!-- .col -->
+        <div class="col-lg-3">
+            <?php get_sidebar(); ?>
+        </div>
     </div><!-- .row -->
 </div><!-- .container -->
 

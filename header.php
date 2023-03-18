@@ -75,7 +75,7 @@ else {
             DEFINE('_DATE_FORMAT_LC3', "%d/%m/%Y %H:%M");
 
             echo (strftime (_DATE_FORMAT_LC3)); 
-            
+        
             ?>
 
         </span>
@@ -87,16 +87,6 @@ else {
 
 
 </table>
-
-
-
-
-
-
-
-
-
-
 
        <!-- ======= Header ======= -->
         <header id="header" class="header fixed-top" data-scrollto-offset="0">
@@ -139,21 +129,39 @@ else {
                     echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
                     echo '</nav><!-- .navbar -->';
                 }  else {
+
+                    if ( is_admin_bar_showing() ) {
+                        echo '<nav id="navbar site-navigation" class="navbar primary-navigation-admin">';
+                        if ( has_nav_menu( 'primary' ) ) :
+                            wp_nav_menu( [
+                                'theme_location' => 'primary',
+                                'container'      => false,
+                                'menu_class'     => 'menu-wrapper',
+                                'container_class' => 'primary-menu-container',
+                                'menu_id'        => '',
+                                'depth'          => 3,
+                                'fallback_cb'     => false
+                            ] );
+                        endif;    
+
+
+                        
+                    } else {
                     echo '<nav id="navbar site-navigation" class="navbar primary-navigation">';
  
                 
-                    if ( has_nav_menu( 'primary' ) ) :
-                        wp_nav_menu( [
-                            'theme_location' => 'primary',
-                            'container'      => false,
-                            'menu_class'     => 'menu-wrapper',
-                            'container_class' => 'primary-menu-container',
-                            'menu_id'        => '',
-                            'depth'          => 3,
-                            'fallback_cb'     => false
-                        ] );
-                    endif;
-
+                        if ( has_nav_menu( 'primary' ) ) :
+                            wp_nav_menu( [
+                                'theme_location' => 'primary',
+                                'container'      => false,
+                                'menu_class'     => 'menu-wrapper',
+                                'container_class' => 'primary-menu-container',
+                                'menu_id'        => '',
+                                'depth'          => 3,
+                                'fallback_cb'     => false
+                            ] );
+                        endif;
+                    }
                     echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
                     echo '</nav><!-- .navbar -->';                    
                 }  

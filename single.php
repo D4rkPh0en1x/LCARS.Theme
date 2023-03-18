@@ -18,9 +18,9 @@ get_header();
                             endwhile;
 
                             // If comments are open then we can show the comments template.
-                            if ( comments_open() || get_comments_number() ) :
-                                comments_template();
-                            endif;
+                            //if ( comments_open() || get_comments_number() ) :
+                            //    comments_template();
+                            //endif;
                             ?>
                         </main><!-- #main -->
                     </div><!-- #primary -->

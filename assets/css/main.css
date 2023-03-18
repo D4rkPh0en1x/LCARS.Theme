@@ -273,7 +273,12 @@ ul.sidebar-cat li:first-child .absolute {
 
 
 .primary-navigation {
-  /*padding-top: 135px!important;*/
+  /*padding-top: 35px!important;*/
+  margin: auto;
+}
+
+.primary-navigation-admin {
+  padding-top: 28px!important;
   margin: auto;
 }
 
