@@ -116,8 +116,13 @@ else {
                 }
 
             ?>
-            <nav id="navbar site-navigation" class="navbar primary-navigation">
+            
                 <?php
+                if ( wp_is_mobile() ){
+
+                    echo '<nav id="navbar site-navigation" class="navbar primary-navigation">';
+ 
+                
                     if ( has_nav_menu( 'primary' ) ) :
                         wp_nav_menu( [
                             'theme_location' => 'primary',
@@ -129,11 +134,11 @@ else {
                             'fallback_cb'     => false
                         ] );
                     endif;
+
+                    echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
+                    echo '</nav><!-- .navbar -->';
+                }    
                 ?>
-
-
-                <i class="bi bi-list mobile-nav-toggle d-none"></i>
-            </nav><!-- .navbar -->
 
             </div>
         </header><!-- End Header -->

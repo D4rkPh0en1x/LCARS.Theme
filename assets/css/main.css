@@ -26,16 +26,112 @@
 
 
  .table-header td {
-
-	/* background-image: url("../../images/lcars_r1_c1.png"); */
   background-position: center; 
   background-repeat: no-repeat;
+}
+
+.table-footer td {
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.table-footer {
+  overflow:hidden;
+  border-radius:50px;
 
 }
 
-
 .wrapper {
   flex: 1 0 auto;
+}
+
+
+
+/*--------------------------------------------------------------
+# Mobile Navigation
+--------------------------------------------------------------*/
+@media (max-width: 1279px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: calc(100% - 70px);
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 9997;
+  }
+  .navbar ul {
+    position: absolute;
+    inset: 0;
+    padding: 10px 0;
+    margin: 0;
+    background: rgba(var(--color-secondary-rgb), 0.9);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+  }
+  .navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(var(--color-white-rgb), 0.7);
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  .navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: var(--color-white);
+  }
+  .navbar .dropdown ul, .navbar .dropdown .dropdown ul {
+    position: static;
+    display: none;
+    padding: 10px 0;
+    margin: 10px 20px;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(var(--color-secondary-light-rgb), 0.3);
+  }
+  .navbar .dropdown > .dropdown-active, .navbar .dropdown .dropdown > .dropdown-active {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block !important;
+    color: var(--color-orange);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 0;
+    transition: 0.5s;
+    position: fixed;
+    top: 20px;
+    z-index: 9999;
+    right: 20px;
+  }
+  .mobile-nav-toggle.bi-x {
+    color: var(--color-white);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+    z-index: 9995;
+    position: relative;
+  }
+  .mobile-nav-active .navbar {
+    left: 0;
+  }
+  .mobile-nav-active .navbar:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(var(--color-secondary-rgb), 0.8);
+    z-index: 9996;
+  }
 }
 
 
@@ -223,7 +319,7 @@ ul.sidebar-cat li:first-child .absolute {
   z-index: 997;
 }
 .header.sticked {
-  background: var(--color-white);
+  /*background: var(--color-white);*/
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
 }
 .header .logo img {
@@ -561,6 +657,7 @@ ul.sidebar-cat li:first-child .absolute {
 .footer .footer-legal {
   padding: 30px 0;
   background: var(--color-secondary-dark);
+  border-radius: 0 0 50px 50px;
 }
 .footer .footer-legal .credits {
   padding-top: 4px;
