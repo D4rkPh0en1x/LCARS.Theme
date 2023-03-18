@@ -224,7 +224,7 @@ ul.sidebar-cat li:first-child .absolute {
 # Header
 --------------------------------------------------------------*/
 .header {
-  padding: 15px 15px;
+  /* padding: 15px 15px;*/
   transition: all 0.5s;
   z-index: 997;
 }
