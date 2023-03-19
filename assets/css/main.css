@@ -282,6 +282,9 @@ ul.sidebar-cat li:first-child .absolute {
   margin: auto;
 }
 
+#quadmenu.quadmenu-custom_theme_1.quadmenu-background-gradient {
+  border-radius: 10px;
+}
 
 
 

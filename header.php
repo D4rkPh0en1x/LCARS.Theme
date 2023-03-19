@@ -7,6 +7,13 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ) ?>">
         <meta name="viewport" content="width=device-width, intial-scale=1">
+
+
+        <!-- Add Favicon */ -->
+        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
+
+
         <?php wp_head(); ?>
         <script type="text/javascript">
             var c=document.cookie;
@@ -103,33 +110,12 @@ else {
                         esc_url( $logo[0] )
                     );
                 } else {
-                    echo bloginfo( 'name' );
+                    /** echo bloginfo( 'name' ); */
                 }
 
             ?>
             
                 <?php
-                if ( wp_is_mobile() ){
-
-                    echo '<nav id="navbar site-navigation" class="navbar primary-navigation-mobile">';
- 
-                
-                    if ( has_nav_menu( 'primary' ) ) :
-                        wp_nav_menu( [
-                            'theme_location' => 'primary',
-                            'container'      => false,
-                            'menu_class'     => 'menu-wrapper',
-                            'container_class' => 'primary-menu-container',
-                            'menu_id'        => '',
-                            'depth'          => 3,
-                            'fallback_cb'     => false
-                        ] );
-                    endif;
-
-                    echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
-                    echo '</nav><!-- .navbar -->';
-                }  else {
-
                     if ( is_admin_bar_showing() ) {
                         echo '<nav id="navbar site-navigation" class="navbar primary-navigation-admin">';
                         if ( has_nav_menu( 'primary' ) ) :
@@ -164,8 +150,10 @@ else {
                     }
                     echo '<i class="bi bi-list mobile-nav-toggle d-none"></i>';
                     echo '</nav><!-- .navbar -->';                    
-                }  
+                
                 ?>
+
+
 
             </div>
         </header><!-- End Header -->
