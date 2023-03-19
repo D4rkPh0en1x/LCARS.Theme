@@ -49,7 +49,28 @@
 	border-radius:25px;
 }
 
+.lcars_featured_image {
+  display: flex;
+  justify-content: center;
+}
 
+.lcars_featured_image img{
+  border-radius: 25px;
+}
+
+.entry-title, .archive-page-header {
+  text-align: center;
+}
+
+.widget-title {
+	font-size: 1.5rem;
+}
+
+.widget{
+  margin-bottom: 10px;
+ }
+
+ 
 /* background container */
 
 .content-area {
@@ -303,7 +324,7 @@ ul.sidebar-cat li:first-child .absolute {
 --------------------------------------------------------------*/
 .footer {
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
@@ -327,7 +348,7 @@ ul.sidebar-cat li:first-child .absolute {
   color: var(--color-primary);
 }
 .footer .footer-content .footer-info p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: var(--font-primary);
@@ -362,7 +383,7 @@ ul.sidebar-cat li:first-child .absolute {
 .footer .footer-content .footer-links ul i {
   padding-right: 2px;
   color: var(--color-white);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
 }
 .footer .footer-content .footer-links ul li {
@@ -818,33 +839,33 @@ h1, h2, h3, h4, h5, h6 {
   
 td,tr,p,div {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #9999ff;
 }
 
 h4 {
   color: #FF9900;
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 h5 {
   color: #FF9900;
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 h6 {
   color: #FF9900;
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 a:link, a:visited {
-  font-size: 14px;
+  font-size: 16px;
   color: #ff9900;
   text-decoration: none;
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-seriff;
@@ -855,7 +876,7 @@ a:hover {
   color: #ff33ff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
 }
 
@@ -896,7 +917,7 @@ hr.separator {
   
 .smalldark {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #cc6699;
   text-decoration: none;
   font-weight: normal;
@@ -908,7 +929,7 @@ hr.separator {
   margin-top: 4px;
   font-weight: normal;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   border: 1px #ffff99 solid;
   height: 20px;
   background-color: #0f0f0f;
@@ -916,7 +937,7 @@ hr.separator {
 
 .inputbox {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #9999ff;
   background: #FFFFFF;
   border: 1px #ff33ff solid;
@@ -964,7 +985,7 @@ hr.separator {
 
 a.mainlevel:link, a.mainlevel:visited {
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #ff9900;
   border: 1px;
@@ -972,7 +993,7 @@ a.mainlevel:link, a.mainlevel:visited {
 
 a.mainlevel:hover {
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #ff33ff;
   text-decoration: none;
@@ -981,14 +1002,14 @@ a.mainlevel:hover {
 
 a.sublevel:link, a.sublevel:visited {
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #ff9900;
 }
 
 a.sublevel:hover {
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #ff33ff;
   text-decoration: none;
@@ -1014,7 +1035,7 @@ a.readon:link, a.readon:visited {
   color: #ff9900;
   text-decoration: none;
   font-family:  Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-indent: +10px;
   border: 1px solid;
@@ -1026,7 +1047,7 @@ a.readon:hover {
   color: #ff33ff;
   font-weight: bold;
   font-family:  Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   border: 1px solid;
 }
@@ -1078,7 +1099,7 @@ table.contenttoc td {
 .category {
   color: #cc99cc;
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
 }
@@ -1096,18 +1117,18 @@ a.blogsection:link, a.blogsection:visited {
   color: #cc6699;
   text-decoration: none;
   font-family:  Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a.blogsection:hover {
   color: #cc99cc;
   text-decoration: underline;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .componentheading {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #FF9900;
   text-align:left;
@@ -1120,7 +1141,7 @@ table.moduletable {
 
 table.moduletable th {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #0f0f0f;
   text-align: left;
@@ -1132,12 +1153,12 @@ table.moduletable th {
 
 table.moduletable td {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .poll {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #ff9900;
   line-height: 14px
@@ -1161,33 +1182,33 @@ a.weblinks:hover {
 
 .newsfeedheading {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #9999ff;
 }
 
 .newsfeeddate {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #cc6699;
   font-weight: normal;
 }
 
 .fase4rdf {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #9999ff;
   font-weight: normal;
 }
 
 a.fase4rdf:link {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #cc6699;
 }
 
 a.fase4rdf:hover {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #cc99cc;
 
@@ -1204,7 +1225,7 @@ table.contact td.icons {
 }
 
 table.contact td.details {
-  font-size: 14px;
+  font-size: 16px;
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
   color: #9999ff;
 }
@@ -1338,7 +1359,7 @@ section {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 .breadcrumbs ol li + li {
   padding-left: 10px;
