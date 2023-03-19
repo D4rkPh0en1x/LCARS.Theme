@@ -45,6 +45,9 @@
   flex: 1 0 auto;
 }
 
+.wp-block-image img {
+	border-radius:25px;
+}
 
 
 /* background container */
@@ -68,6 +71,13 @@
 
 
 /*Sidebar*/
+
+.img_center {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 #sidebar .widget:not(.widget_block) a{color: #2fbeef;}
 
@@ -798,7 +808,13 @@ body {
   font-family: Orbitron, Verdana, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
+
 }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ff9900;
+}
+
   
 td,tr,p,div {
   font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;

@@ -30,8 +30,8 @@ get_header();
                             endwhile;
 
                             echo paginate_links( [
-                                'prev_text' => esc_html__( 'Prev', 'herobiz' ),
-                                'next_text' => esc_html__( 'Next', 'herobiz' ),
+                                'prev_text' => esc_html__( 'Zurück', 'lcars' ),
+                                'next_text' => esc_html__( 'Vor', 'lcars' ),
                             ] );
 
                     else :

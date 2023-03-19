@@ -43,19 +43,20 @@
 
         // Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'lcars_custom_background_args', array(
-			'default-color'			 => '000000',
-			'default-size'           => 'auto',
-			'default-attachment'     => 'scroll',
-			'default-image' 		 => get_template_directory_uri() . '/images/back.jpg',
-			'default-repeat'         => 'no-repeat',
-			'default-position-x'     => '',
-			'default-attachment'     => '',
+			'default-image'          => get_template_directory_uri() . '/images/back.jpg',
+			'default-preset'         => 'custom', // 'default', 'fill', 'fit', 'repeat', 'custom'
+			'default-position-x'     => 'center',    // 'left', 'center', 'right'
+			'default-position-y'     => 'center',     // 'top', 'center', 'bottom'
+			'default-size'           => 'auto',    // 'auto', 'contain', 'cover'
+			'default-repeat'         => 'no-repeat',  // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
+			'default-attachment'     => 'fixed',  // 'scroll', 'fixed'
+			'default-color'          => '000000',
 			'wp-head-callback'       => '_custom_background_cb',
 			'admin-head-callback'    => '',
 			'admin-preview-callback' => ''
 		) ) );
 		
-		add_theme_support( 'custom-background', $defaults );
+		// add_theme_support( 'custom-background', $defaults );
 
         /*
 		 * Switch default core markup for search form, comment form, and comments
@@ -186,7 +187,8 @@ add_action( 'wp_enqueue_scripts', 'lcars_public_scripts' );
  */
 function lcars_widgets_init()
 {
-	register_sidebar( array(
+/*	register_sidebar( array(
+		register_sidebar( array(
         'name'          => esc_html__( 'Footer 1', 'lcars' ),
         'id'            => 'lcars_foot_1',
         'description'   => esc_html__( 'Add widgets here.', 'lcars' ),
@@ -221,8 +223,18 @@ function lcars_widgets_init()
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
-    ) );
+    ) );*/
 }
 
 add_action( 'widgets_init', 'lcars_widgets_init' );
 
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_category() ) {
+	  $title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+	  $title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+	  $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	}
+	return $title; 
+  });
