@@ -25,9 +25,10 @@
 }
 
 
- .table-header td {
-  background-position: center; 
-  background-repeat: no-repeat;
+.table-header td {
+background-position: center; 
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 .table-footer td {
@@ -70,7 +71,11 @@
   margin-bottom: 10px;
  }
 
- 
+.lcars_time_date {
+background-color: #ffff99;
+border-radius: 0 0 50px 50px;
+}
+
 /* background container */
 
 .content-area {

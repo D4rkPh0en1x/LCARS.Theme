@@ -66,12 +66,19 @@ else {
   </tr>
 
 <tr>
-    <td height="45" colspan="5" valign="top" background="<?php echo get_template_directory_uri(); ?>/images/lcars_r3_c1.png">&nbsp;</td>
+    <td height="45" colspan="5" valign="top" background="<?php echo get_template_directory_uri(); ?>/images/lcars_r3_c1.png">
+
+   </td>
 </tr>
 
+<tr>
+    <td height="5" colspan="5" valign="top">
+
+   </td>
+</tr>
 
 <tr>
-    <td width="160" height="25" align="center" valign="middle">
+    <td class="lcars_time_date" width="160" height="25" align="center" valign="middle">
         <span class="medium">
             <?php 
 
@@ -79,13 +86,39 @@ else {
 
             DEFINE('_DATE_FORMAT_LC', "%A, der %d. %B %Y"); //Verwendet das PHP strftime Format
             DEFINE('_DATE_FORMAT_LC2', "%A, %d %B %Y %H:%M");
-            DEFINE('_DATE_FORMAT_LC3', "%d/%m/%Y %H:%M");
+            DEFINE('_DATE_FORMAT_LC3', "%H:%M %d/%m/%Y");
+            DEFINE('_DATE_FORMAT_TIME', "%H:%M");
+            DEFINE('_DATE_FORMAT_DATE', "%d/%m/%Y");
 
-            echo (strftime (_DATE_FORMAT_LC3)); 
+            echo (strftime (_DATE_FORMAT_TIME)); 
         
             ?>
 
         </span>
+    </td>
+    <td width="10"></td>
+    <td width="906"></td>
+    <td width="10"></td>
+    <td class="lcars_time_date" width="160" height="25" align="center" valign="middle">
+    <span class="medium">
+            <?php 
+
+            setlocale(LC_TIME, 'de_DE.UTF8');
+
+            DEFINE('_DATE_FORMAT_LC', "%A, der %d. %B %Y"); //Verwendet das PHP strftime Format
+            DEFINE('_DATE_FORMAT_LC2', "%A, %d %B %Y %H:%M");
+            DEFINE('_DATE_FORMAT_LC3', "%H:%M %d/%m/%Y");
+            DEFINE('_DATE_FORMAT_TIME', "%H:%M");
+            DEFINE('_DATE_FORMAT_DATE', "%d/%m/%Y");
+
+            echo (strftime (_DATE_FORMAT_DATE)); 
+        
+            ?>
+
+        </span>
+
+
+
     </td>
 </tr>
 

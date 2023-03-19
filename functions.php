@@ -46,7 +46,7 @@
 			'default-image'          => get_template_directory_uri() . '/images/back.jpg',
 			'default-preset'         => 'custom', // 'default', 'fill', 'fit', 'repeat', 'custom'
 			'default-position-x'     => 'center',    // 'left', 'center', 'right'
-			'default-position-y'     => 'center',     // 'top', 'center', 'bottom'
+			'default-position-y'     => 'top',     // 'top', 'center', 'bottom'
 			'default-size'           => 'auto',    // 'auto', 'contain', 'cover'
 			'default-repeat'         => 'no-repeat',  // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
 			'default-attachment'     => 'fixed',  // 'scroll', 'fixed'
