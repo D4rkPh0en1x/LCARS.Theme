@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: 'Orbitron-Regular';
   src: url('https://fonts.datateam.center/fonts/Orbitron-Regular.svg#Orbitron-Regular') format('svg'),
@@ -76,6 +74,48 @@ background-color: #ffff99;
 border-radius: 0 0 50px 50px;
 }
 
+.rpwe-img img {
+ margin-left: 10px!important;
+}
+
+.nt_image_type_thumb {
+	border-radius:10px;
+}
+
+.widget-content-bottom {
+	max-width:300px;
+  margin: auto;
+}
+
+.is-search-form input {
+	border-radius: 50px 0 0 50px!important;
+}
+.is-search-submit input {
+	border-radius: 50px 0 0 50px!important;
+}
+
+.is-search-icon {
+		border-radius: 0 50px 50px 0!important;
+}
+
+.cmtt_related:before {
+	content:"Wörterverzeichnis:";
+}
+
+.ninja_clmn_nm_name a {
+	color:#ff9900!important;
+	font-size:20px!important;
+}
+
+.ninja_clmn_nm_name a:hover {
+	color:#ffff99!important;
+	font-size:20px!important;
+}
+
+#footable_parent_423 tbody > tr > td {
+	font-size:20px!important;
+}
+
 /* background container */
 
 .content-area {
@@ -94,7 +134,19 @@ border-radius: 0 0 50px 50px;
   margin-bottom: 20px;
 }
 
+.glossary-search-wrapper {
+	display: inline-table!important;	
+}
 
+.glossaryItemBody img {
+	border-radius:10px;
+	margin: auto;
+    display: block;
+}
+
+.glossaryItemTitle {
+	text-align: center;
+}
 
 /*Sidebar*/
 
@@ -214,7 +266,7 @@ ul.sidebar-cat li:last-child, .widget.widget_categories li:last-child,
 ul.sidebar-cat li a, .widget.widget_categories li a,.widget.widget_archive li a, .widget.widget_pages li a,
 .widget.widget_meta li a, .widget.widget_nav_menu li a, .widget.widget_recent_entries li a, .widget.widget_recent_comments li a, .widget:not(.widget_block) li a {
   color: #9999ff;
-  line-height: 2.2;
+  line-height: 1.2;
   width: 100%;
   display: inline-block;
   transition: all ease-in-out 0.3s;
@@ -225,9 +277,9 @@ ul.sidebar-cat li a, .widget.widget_categories li a,.widget.widget_archive li a,
 ul.sidebar-cat li a:before, .widget.widget_categories li a:before ,.widget.widget_archive li a:before, .widget.widget_pages li a:before,
 .widget.widget_meta li a:before, .widget.widget_nav_menu li a:before, .widget.widget_recent_entries li a:before, 
 .widget.widget_recent_comments li span a:before,.widget:not(.widget_block) li a::before{
-  content: '\f105';
+  /*content: '\f105';
   font-family: 'Font Awesome 5 Free';
-  padding-right: 5px;
+  padding-right: 5px;*/
 }
 
 
@@ -236,9 +288,9 @@ ul.sidebar-cat li a:hover, ul.archive li a:hover, .widget.widget_categories li a
 .widget.widget_meta li a:hover, .widget.widget_nav_menu li a:hover, 
 .widget.widget_recent_entries li a:hover, .widget.widget_recent_comments li a:hover,
 .widget.widget_archive li:hover, .widget.widget_categories li:hover, .widget li a:hover{
-  padding-left: 5px;
+ /* padding-left: 5px;
   transition: all ease-in-out 0.3s;
-  /*color: #2fbeef !important;*/
+  color: #2fbeef !important;*/
 }
 
 .widget.widget_calendar table{background: #fff;}
@@ -936,8 +988,7 @@ hr.separator {
   text-align: center;
   font-size: 16px;
   border: 1px #ffff99 solid;
-  height: 20px;
-  background-color: #0f0f0f;
+  background-color: #ffff99;
 }
 
 .inputbox {

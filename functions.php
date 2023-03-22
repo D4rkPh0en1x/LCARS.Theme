@@ -158,9 +158,9 @@ function lcars_public_scripts() {
     // Styles.
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', [], wp_rand(), 'all' );
     wp_enqueue_style( 'bootstrap-icons', get_template_directory_uri() . '/assets/vendor/bootstrap-icons/bootstrap-icons.css', [], wp_rand(), 'all' );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/vendor/fontawesome/css/all.css', [], wp_rand(), 'all' );
-	wp_enqueue_style( 'fontawesome-v4', get_template_directory_uri() . '/assets/vendor/fontawesome/css/v4-shims.css', [], wp_rand(), 'all' );
-	wp_enqueue_style( 'fontawesome-v5', get_template_directory_uri() . '/assets/vendor/fontawesome/css/v5-font-face.css', [], wp_rand(), 'all' );
+	//wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/vendor/fontawesome/css/all.css', [], wp_rand(), 'all' );
+	//wp_enqueue_style( 'fontawesome-v4', get_template_directory_uri() . '/assets/vendor/fontawesome/css/v4-shims.css', [], wp_rand(), 'all' );
+	//wp_enqueue_style( 'fontawesome-v5', get_template_directory_uri() . '/assets/vendor/fontawesome/css/v5-font-face.css', [], wp_rand(), 'all' );
     wp_enqueue_style( 'aos', get_template_directory_uri() . '/assets/vendor/aos/aos.css', [], wp_rand(), 'all' );
     wp_enqueue_style( 'glightbox', get_template_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', [], wp_rand(), 'all' );
     wp_enqueue_style( 'swiper', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.css', [], wp_rand(), 'all' );
@@ -188,7 +188,7 @@ add_action( 'wp_enqueue_scripts', 'lcars_public_scripts' );
 function lcars_widgets_init()
 {
 /*	register_sidebar( array(
-		register_sidebar( array(
+	register_sidebar( array(
         'name'          => esc_html__( 'Footer 1', 'lcars' ),
         'id'            => 'lcars_foot_1',
         'description'   => esc_html__( 'Add widgets here.', 'lcars' ),
@@ -224,6 +224,18 @@ function lcars_widgets_init()
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );*/
+	
+	register_sidebar( array(
+        'name'          => esc_html__( 'Content Bottom', 'lcars' ),
+        'id'            => 'lcars_content_bottom',
+        'description'   => esc_html__( 'Add widgets here.', 'lcars' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );	
+	
+	
 }
 
 add_action( 'widgets_init', 'lcars_widgets_init' );
@@ -238,3 +250,13 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title; 
   });
+
+add_action( 'pre_get_posts', 'new_sort_order'); 
+function new_sort_order($query) {
+	if(is_archive()  && $query->is_main_query() ):
+		//Set the order ASC or DESC
+		$query->set( 'order', 'ASC' );
+		//Set the orderby
+		$query->set( 'orderby', 'DATE' );
+	endif;    
+};

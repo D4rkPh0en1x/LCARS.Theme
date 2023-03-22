@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Scroll with ofset on page load with hash links in the url
-   */
+   *
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         scrollto(window.location.hash);
       }
     }
-  });
+  });*/
 
   /**
    * Mobile nav toggle

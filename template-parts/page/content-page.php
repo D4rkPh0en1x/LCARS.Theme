@@ -5,15 +5,32 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>">
+	
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+		    <!-- Post thumbnail -->
     <?php
-        /**
-         * Page Thumbnail.
-         */
-        if ( has_post_thumbnail() ) :
-            the_post_thumbnail( 'full' ); // full, large, medium, custom size
-        endif;
+    $post_id=get_the_ID();
+    $featured_img_url = get_the_post_thumbnail_url( $post_id );
+    
+    if ( has_post_thumbnail() ) :
+        
+        echo '<a class="lcars_featured_image glightbox" href="' . $featured_img_url . '"   
+        data-type="image" 
+        data-effect="fade" 
+        data-width="900px" 
+        data-height="auto" 
+        data-zoomable="false" 
+        data-draggable="false" 
+        data-lightbox="' . $post_id . '" 
+        data-title="' . get_the_title() . '">';
+
+
+        the_post_thumbnail( array(450, 450) ); // full, large, medium, custom size
+     
+        echo '</a><br/>';
+
+    endif;
     ?>
 
     <div class="entry-content">
@@ -25,6 +42,10 @@
                 'after'  => '</div>',
             ) );
         ?>
+		
+		<div class="widget-content-bottom">
+		<?php dynamic_sidebar( 'lcars_content_bottom' ); ?>
+		</div>	
     </div>
 
     <?php if ( get_edit_post_link() ) : ?>
