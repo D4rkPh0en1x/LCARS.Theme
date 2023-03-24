@@ -116,6 +116,35 @@ border-radius: 0 0 50px 50px;
 	font-size:20px!important;
 }
 
+/* The Movie Data Base Plugin */
+.mmdb-body {
+	border-radius: 0px 0px 20px 20px;
+}
+
+.mmdb-header {
+	/* border-radius: 0px 20px 0px 0px;*/
+}
+
+.mmdbTabs .active .activeTab {
+	border-radius: 20px 20px 0px 0px;
+}
+
+/* TOC Plugin*/
+.ez-toc-widget-sticky-container {
+	padding-top: 5px!important;
+	padding-left: 10px!important;
+	padding-bottom: 1px!important;
+	padding-right: 10px!important;
+	border-radius: 20px;
+	background-color:#774466!important;
+}
+
+.ez-toc-widget-sticky-container ul.ez-toc-widget-sticky-list li.active {
+	padding-top: 10px!important;
+	background-color:#ffff99!important;
+	border-radius: 10px;
+}
+
 /* background container */
 
 .content-area {
