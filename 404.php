@@ -3,7 +3,6 @@
  * The template for displaying 404 pages (not found)
  * @package LCARS
  */
-
 get_header();
 ?>
 <div class="container">
@@ -13,16 +12,13 @@ get_header();
                 <main id="main" class="site-main">
                     <section class="error-404 not-found">
                         <header class="page-header">
-                            <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'lcars' ); ?></h1>
+                            <h1 class="page-title"><?php esc_html_e( 'Oops! Diese Seite kann nicht gefunden werden.', 'lcars' ); ?></h1>
                         </header><!-- .page-header -->
-
                         <div class="page-content">
-                            <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ninestars' ); ?></p>
-
+                            <p><?php esc_html_e( 'Es sieht so aus als könnten wir nicht das wonach sie suchen finden. Eventuel hilft ein folgender Link oder eine Suche?', 'ninestars' ); ?></p>
                             <?php get_search_form(); ?>
                         </div><!-- .page-content -->
                     </section><!-- .error-404 -->
-
                 </main><!-- #main -->
             </div><!-- #primary -->
         </div>

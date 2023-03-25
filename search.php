@@ -28,10 +28,8 @@ get_header();
 					<?php endif; ?>
 				</main>
 			</div>
-
         </div><!-- .col -->
     </div><!-- .row -->
 </div><!-- .container -->
-
 <?php
 get_footer();

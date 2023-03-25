@@ -2,12 +2,10 @@
 /**
  * Template for displaying comments.
  */
-
 if ( post_password_required() ) {
     return;
 }
 ?>
-
 <div id="comments" class="comments-area">
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
@@ -15,11 +13,11 @@ if ( post_password_required() ) {
             $comment_count = get_comments_number();
             if ( '1' === $comment_count ) {
                 printf(
-                    esc_html__( 'Comments (1)', 'herobiz' )
+                    esc_html__( 'Comments (1)', 'lcars' )
                 );
             } else {
                 printf(
-                    esc_html__( 'Comments (%1$s)', 'herobiz' ),
+                    esc_html__( 'Comments (%1$s)', 'lcars' ),
                     intval( $comment_count )
                 );
             }
@@ -40,14 +38,13 @@ if ( post_password_required() ) {
         if ( ! comments_open() ) {
             printf(
                 '<p class="no-comments">%1$s</p>',
-                esc_html__( 'Comments are closed', 'herobiz' )
+                esc_html__( 'Comments are closed', 'lcars' )
             );
         }
         ?>
     <?php
     endif;
-    // Show commetns form.
+    // Show comments form.
     comment_form();
     ?>
-
 </div>
