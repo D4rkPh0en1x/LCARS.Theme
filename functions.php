@@ -43,10 +43,10 @@
 
         // Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'lcars_custom_background_args', array(
-			'default-image'          => get_template_directory_uri() . '/images/back.jpg',
+			'default-image'          => get_template_directory_uri() . '/images/stback.jpg',
 			'default-preset'         => 'custom', // 'default', 'fill', 'fit', 'repeat', 'custom'
 			'default-position-x'     => 'center',    // 'left', 'center', 'right'
-			'default-position-y'     => 'top',     // 'top', 'center', 'bottom'
+			'default-position-y'     => 'center',     // 'top', 'center', 'bottom'
 			'default-size'           => 'auto',    // 'auto', 'contain', 'cover'
 			'default-repeat'         => 'no-repeat',  // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
 			'default-attachment'     => 'fixed',  // 'scroll', 'fixed'
@@ -260,3 +260,218 @@ function new_sort_order($query) {
 		$query->set( 'orderby', 'DATE' );
 	endif;    
 };
+
+
+/* Blog single post meta */
+if(!function_exists('lcars_blog_singlepost_meta')){
+function lcars_blog_singlepost_meta(){
+	global $lcars_opt;	
+	 if (!empty($lcars_opt['lcars_blog_post_meta']) && $lcars_opt['lcars_blog_post_meta']==true){
+		
+	}else{
+		if( 'post' == get_post_type() ) { ?>				
+				
+				
+					<div class="lcars-blog-meta table-responsive">
+						<table class="table table-borderless lcars_comments">
+							<thead>
+								<tr class="text-center align-middle" >
+									<th scope="col"><i class="fa-regular fa-calendar"></i></th>
+									<th scope="col"><i class="fa-regular fa-hand-spock"></i> Klassisch</th>
+									<th scope="col"><i class="fa-solid fa-user-astronaut"></i> Neu</th>
+									<th scope="col"><i class="fa-regular fa-pen-to-square"></i></th>
+								</tr>
+							</thead>		
+							<tbody>
+								<tr class="text-center align-middle">
+									<td>
+										<?php echo get_the_time(get_option('date_format')); ?>
+									</td>
+									<td>
+										<?php stardate_theme('classic'); ?>
+									</td>
+									<td>
+										<?php stardate_theme('XI'); ?>
+									</td>
+									<td>
+										<?php echo get_the_modified_date(get_option('date_format')); ?>
+									</td>
+								</tr>
+							</tbody>
+								  
+						</table>
+						<!--
+						
+						<table class="table table-borderless lcars_comments">
+							  <thead>
+								<tr class="text-center align-middle" >
+								  	<th scope="col"><i class="fa-regular fa-user"></i></th>
+									<th scope="col"><i class="fa-regular fa-comments"></i></th>
+								</tr>
+							  </thead>	
+							<tbody>
+								<tr class="text-center align-middle">
+									<td>
+										<?php the_author(); ?>
+									</td>
+									<td>
+										<?php if ( comments_open() || get_comments_number() ) {?>
+											<a href="<?php comments_link(); ?>"><i class="icofont-comment"></i>
+												<?php comments_number( esc_html__('0 Comments','lcars'), esc_html__('1 Comment','lcars'), esc_html__('% Comments','lcars') );?>
+											</a>
+											
+											<?php }else{?>
+												<span><i class="fa-regular fa-comments"></i> <?php echo esc_html__('Kommentarfunktion geschlossen','lcars'); ?></span>
+											<?php } ?>
+										
+									</td>
+								</tr>
+							</tbody>							
+						</table>	
+						-->
+
+					</div>
+				
+		<?php } // if post ?>
+	<?php } 
+	}
+}
+
+/* lcars comment form */
+add_filter('comment_form_default_fields','lcars_comments_form');
+if(!function_exists('lcars_comments_form')){
+    function lcars_comments_form($default){
+			$default['author'] = '<div  class="comment_forms from-area"><div  class="comment_forms_inner">
+			
+			<div class="comment_field">
+			<div class="row">
+				<div class="col-md-6 form-group">
+					<input id="name" class="form-control" name="author" type="text" placeholder="Name*"/>
+				</div>';
+
+			$default['email'] = '
+				<div class="col-md-6 form-group">				
+					<input id="email" class="form-control"  name="email" type="text" placeholder="E-Mail*"/>
+				</div> 
+			</div>';	
+
+			$default['phone'] = '
+				<div class="row">
+					<div class="col-md-6 form-group">				
+						<input id="phone" class="form-control"  name="phone" type="text" placeholder="Rufnummer"/>
+					</div> 
+				';			
+			$default['title'] = '
+				<div class="col-md-6 form-group">
+					<input id="title" class="form-control" name="url" type="text" placeholder="Webseite"/>
+				</div>   
+				</div>   
+			</div>  ';	
+			$default['url']='';
+			$default['message'] ='<div class="comment_field"><div class="textarea-field"><textarea name="comment" id="comment" cols="30" rows="10" class="form-control" placeholder="Schreibe dein Kommentar*..."></textarea></div></div>   </div></div>';																		
+
+ 
+        return $default;
+    }
+}
+add_filter('comment_form_defaults','lcars_form_default');
+
+ if(!function_exists('lcars_form_default')){
+    function lcars_form_default($default_info){
+        if(!is_user_logged_in()){
+            $default_info['comment_field'] = '';
+        }else{
+            $default_info['comment_field'] = '<div  class="comment_forms"><div  class="comment_forms_inner"> <div class="comment_field"><div class="textarea-field"><textarea name="comment" id="comment" class="form-control" cols="30" rows="10" placeholder="Schreibe ein Kommentar..."></textarea></div></div> </div></div>';
+        }
+         
+        $default_info['submit_button'] = '<button class="comment_lcars_btn button" type="submit">'.esc_html__('Kommentar hinzufügen','lcars').'</button>';
+        $default_info['submit_field'] = '%1$s %2$s';
+        $default_info['comment_notes_before'] = ' ';
+        $default_info['title_reply'] = esc_html__('Schreibe ein Kommentar ','lcars');
+        $default_info['title_reply_before'] = '<div class="commment_title"><h3> ';
+        $default_info['title_reply_after'] = '</h3></div> ';
+ 
+        return $default_info;
+    }
+ 
+ }
+	
+	
+//lcars comment show
+if(! function_exists('lcars_comment')){
+	function lcars_comment($comment,$arg, $depth){
+		$GLOBALS ['comment'] = $comment;
+		?>
+
+		<!-- comment reply -->		
+		<div class="post_comment">
+			<div class="comment_inner">
+				<div class="post_reply">
+					<div class="post_reply_content">											
+						<div class="post_reply_inner" id="comment-<?php comment_ID(); ?>">
+							
+							<div class="table-responsive">
+							<table class="table table-borderless lcars_comments">
+							  <thead>
+								<tr class="text-center align-middle" >
+								  <th scope="col"><i class="fa-solid fa-image-portrait"></i></th>
+								  <th scope="col"><i class="fa-regular fa-user"></i></th>
+								  <th scope="col"><i class="fa-regular fa-calendar"></i></th>
+								  <th scope="col"><i class="fa-solid fa-reply"></i></th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr class="text-center align-middle">
+								  	<td>
+										<div class="post_reply_thumb">
+								 		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"> <?php echo get_avatar($comment,80); ?></a>
+										</div>
+									</td>
+								  	<td>									
+										<div class="post_reply">
+										<div class="st"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php echo get_comment_author(); ?></a></div>
+									</td>
+								  	<td>
+										<span class="span_left"><?php echo get_comment_date(get_option('date_format')); ?></span>
+									</td>
+								  	<td>
+										<?php 
+											comment_reply_link(
+												array_merge($arg,array(
+													'reply_text' => '<span class="span_right">'. esc_html__('Antworten','lcars').'</span>',
+													'depth'    => $depth,
+													'max_depth' => $arg['max_depth']
+												))
+											); 
+										?>   
+									</td>
+								</tr>
+								<tr class="text-center align-middle">
+								  <td colspan="4"><i class="fa-regular fa-comments"></i></td>
+								</tr>
+								<tr>
+								  <td colspan="4"><?php comment_text(); ?></td>
+								</tr>
+							  </tbody>
+							</table>
+							</div>
+							
+							
+							
+							
+							
+
+
+							
+								<div class="edit_comment"><?php edit_comment_link(esc_html__('(Edit)' , 'lcars' ),'<small class="ecome">','</small>') ?></div>
+							</div>
+							
+						</div>
+					</div>																
+				</div>
+			</div>
+			
+	
+		<?php
+	}
+}
