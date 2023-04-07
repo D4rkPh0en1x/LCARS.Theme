@@ -34,6 +34,7 @@
             ) );
         ?>
 		<div class="widget-content-bottom">
+		<br/>	
 		<?php dynamic_sidebar( 'lcars_content_bottom' ); ?>
 		</div>	
     </div>

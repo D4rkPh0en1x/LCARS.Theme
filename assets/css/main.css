@@ -16,6 +16,34 @@
   font-style: normal;
 }
 
+@font-face { 
+  font-family: 'TNG_Title';
+  src: url('https://fonts.datateam.center/fonts/TNG_Title.eot');
+  src: url('https://fonts.datateam.center/fonts/TNG_Title.eot?#iefix') format('embedded-opentype'),
+       url('https://fonts.datateam.center/fonts/TNG_Title.svg#TNG_Title') format('svg'),
+       url('https://fonts.datateam.center/fonts/TNG_Title.otf') format('otf'),
+	   url('https://fonts.datateam.center/fonts/TNG_Title.ttf') format('truetype'),
+       url('https://fonts.datateam.center/fonts/TNG_Title.woff') format('woff'),
+       url('https://fonts.datateam.center/fonts/TNG_Title.woff2') format('woff2');
+  font-style: normal;
+}
+
+
+
+
+@font-face { 
+  font-family: 'Final_Frontier';
+  src: url('https://fonts.datateam.center/fonts//Final_Frontier.eot');
+  src: url('https://fonts.datateam.center/fonts//Final_Frontier.eot?#iefix') format('embedded-opentype'),
+       url('https://fonts.datateam.center/fonts//Final_Frontier.otf') format('otf'),
+       url('https://fonts.datateam.center/fonts//Final_Frontier.svg#Final_Frontier') format('svg'),
+       url('https://fonts.datateam.center/fonts//Final_Frontier.ttf') format('truetype'),
+       url('https://fonts.datateam.center/fonts//Final_Frontier.woff') format('woff'),
+       url('https://fonts.datateam.center/fonts//Final_Frontier.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;	
+}
+
 
 .row {
   margin-right: calc(-1.1 * var(--bs-gutter-x));
@@ -78,6 +106,19 @@ border-radius: 0 0 50px 50px;
  margin-left: 10px!important;
 }
 
+/* Center the Moon */
+.lcars_moon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Quotes Title */
+.archive-title { 
+	display: none;
+}
+
 /* Meta */
 .lcars-blog-meta {
 	text-align: center;
@@ -101,6 +142,16 @@ border-radius: 0 0 50px 50px;
 	border-radius:10px;
 	width: 200px;
 }
+
+/* Ninja Tables Lightbox */
+.lity-image img {
+max-height: 570px !important;
+}
+
+button.lity-close {
+position: absolute !important;
+}
+
 
 /* FooBox */
 .fbx-light .fbx-inner, .fbx-light.fbx-inset-buttons:not(.fbx-fullscreen-mode) .fbx-next .fbx-icon, .fbx-light.fbx-inset-buttons:not(.fbx-fullscreen-mode) .fbx-prev .fbx-icon, .fbx-light.fbx-modal, .fbx-modal.fbx-light.fbx-phone .fbx-close:hover, .fbx-modal.fbx-light.fbx-phone .fbx-fullscreen-toggle:hover, .fbx-modal.fbx-light.fbx-phone .fbx-next:hover, .fbx-modal.fbx-light.fbx-phone .fbx-pause:hover, .fbx-modal.fbx-light.fbx-phone .fbx-play:hover, .fbx-modal.fbx-light.fbx-phone .fbx-prev:hover, .fbx-modal.fbx-light.fbx-phone .fbx-social-toggle:hover, .fbx-rounded.fbx-light .fbx-close, .fbx-rounded.fbx-light .fbx-fullscreen-toggle, .fbx-rounded.fbx-light .fbx-pause, .fbx-rounded.fbx-light .fbx-play, .fbx-rounded.fbx-light .fbx-social-toggle {
@@ -961,7 +1012,16 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: #ff9900;
+  color: #FF9900;
+  font-family: Final_Frontier, Orbitron, Verdana, Helvetica, Arial, sans-serif;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-family: Final_Frontier, Orbitron, Verdana, Helvetica, Arial, sans-serif!important;
+}
+
+.entry-link {
+  font-family: Final_Frontier, Orbitron, Verdana, Helvetica, Arial, sans-serif!important;
 }
 
   
@@ -972,22 +1032,16 @@ td,tr,p,div {
 }
 
 h4 {
-  color: #FF9900;
-  font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
 h5 {
-  color: #FF9900;
-  font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
 h6 {
-  color: #FF9900;
-  font-family: Orbitron, Arial, Verdana, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
